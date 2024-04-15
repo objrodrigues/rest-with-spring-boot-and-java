@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import br.com.objrodrigues.model.Person;
+import br.com.objrodrigues.data.vo.v1.PersonVO;
 import br.com.objrodrigues.services.PersonService;
 
 
@@ -27,7 +27,7 @@ public class PersonController {
         value ="/{id}",
         produces = "application/json"
     )
-    public Person findById (
+    public PersonVO findById (
         @PathVariable Long id
     ) throws Exception {
         return service.findById(id);
@@ -37,7 +37,7 @@ public class PersonController {
         value ="/all",
         produces = "application/json"
     )
-    public List<Person> findAll () throws Exception {
+    public List<PersonVO> findAll () throws Exception {
         return service.findAll();
     }
 
@@ -46,7 +46,7 @@ public class PersonController {
         consumes = "application/json",
         produces = "application/json"
     )
-    public Person createPerson(@RequestBody Person person) throws Exception {
+    public PersonVO createPerson(@RequestBody PersonVO person) throws Exception {
         return service.createPerson(person);
     }
 
@@ -55,7 +55,7 @@ public class PersonController {
         consumes = "application/json",
         produces = "application/json"
     )
-    public Person upatePerson(@RequestBody Person person) throws Exception {
+    public PersonVO upatePerson(@RequestBody PersonVO person) throws Exception {
         return service.createPerson(person);
     }
 
