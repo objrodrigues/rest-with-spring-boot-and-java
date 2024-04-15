@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import br.com.objrodrigues.data.vo.v2.PersonVOV2;
-import br.com.objrodrigues.services.PersonService;
+import br.com.objrodrigues.services.PersonServiceV2;
 
 
 @RestController
@@ -15,7 +15,7 @@ import br.com.objrodrigues.services.PersonService;
 public class PersonControllerV2 {
     
     @Autowired
-    private PersonService service;
+    private PersonServiceV2 serviceV2;
 
     @PostMapping(
         value = "/create",
@@ -23,7 +23,7 @@ public class PersonControllerV2 {
         produces = "application/json"
     )
     public PersonVOV2 createPersonV2(@RequestBody PersonVOV2 person) throws Exception {
-        return service.createPersonV2(person);
+        return serviceV2.createPersonV2(person);
     }
 
 }
