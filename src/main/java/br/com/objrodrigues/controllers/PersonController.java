@@ -17,14 +17,14 @@ import br.com.objrodrigues.services.PersonService;
 
 
 @RestController
-@RequestMapping("/person")
+@RequestMapping("/api/person/v1")
 public class PersonController {
     
     @Autowired
     private PersonService service;
 
     @GetMapping(
-        value ="/{id}",
+        value ="/get/{id}",
         produces = "application/json"
     )
     public PersonVO findById (
@@ -34,7 +34,7 @@ public class PersonController {
     }
 
     @GetMapping(
-        value ="/all",
+        value ="/get/all",
         produces = "application/json"
     )
     public List<PersonVO> findAll () throws Exception {
