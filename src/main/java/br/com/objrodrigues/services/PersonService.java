@@ -8,7 +8,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import br.com.objrodrigues.data.vo.v1.PersonVO;
-import br.com.objrodrigues.data.vo.v2.PersonVOV2;
 import br.com.objrodrigues.exceptions.ResourceNotFoundException;
 import br.com.objrodrigues.mapper.DozerMapper;
 import br.com.objrodrigues.mapper.custom.PersonMapper;
