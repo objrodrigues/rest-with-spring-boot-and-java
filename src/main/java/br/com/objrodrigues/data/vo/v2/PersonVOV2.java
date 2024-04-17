@@ -3,12 +3,16 @@ package br.com.objrodrigues.data.vo.v2;
 import java.io.Serializable;
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 public class PersonVOV2 implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
     private Long id;
+    @JsonProperty("first_name")
     private String firstName;
+    @JsonProperty("last_name")
     private String lastName;
     private String address;
     private String gender;
@@ -16,12 +20,13 @@ public class PersonVOV2 implements Serializable {
 
     public PersonVOV2() {}
 
-    public PersonVOV2(Long id, String firstName, String lastName, String address, String gender) {
+    public PersonVOV2(Long id, String firstName, String lastName, String address, String gender, Date birthDay) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
         this.address = address;
         this.gender = gender;
+        this.birthDay = birthDay;
     }
 
     public Long getId() {
